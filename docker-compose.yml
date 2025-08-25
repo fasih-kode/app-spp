@@ -4,6 +4,7 @@ services:
   app:
     image: sayafasih/proyek-spps-app:latest
     container_name: ci3-app
+    restart: always
     ports:
       - "8080:80"
     depends_on:
@@ -42,3 +43,4 @@ services:
 
 volumes:
   dbdata:
+
