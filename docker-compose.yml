@@ -1,46 +1,38 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  app:
-    image: sayafasih/proyek-spps-app:latest
-    container_name: ci3-app
+  web:
+    image: sayafasih/proyek-spps-app:v2
+    container_name: php56-apache
     restart: always
     ports:
       - "8080:80"
     depends_on:
-      - mariadb
-    environment:
-      - DB_HOST=mariadb
-      - DB_USER=ci3user
-      - DB_PASSWORD=secret123
-      - DB_NAME=ci3db
+      - db
 
-  mariadb:
-    image: mariadb:10.11
-    container_name: ci3-mariadb
+  db:
+    image: mariadb:10.1
+    container_name: mariadb101
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: ci3db
-      MYSQL_USER: ci3user
-      MYSQL_PASSWORD: secret123
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpass
     volumes:
-      - dbdata:/var/lib/mysql
+      - db_data:/var/lib/mysql
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: ci3-phpmyadmin
+    image: sayafasih/phpmyadmin:4.5.1
+    container_name: pma451
     restart: always
     ports:
       - "8081:80"
-    environment:
-      PMA_HOST: mariadb
-      PMA_PORT: 3306
-      PMA_USER: ci3user
-      PMA_PASSWORD: secret123
     depends_on:
-      - mariadb
+      - db
 
 volumes:
-  dbdata:
+  db_data:
+
+
 
