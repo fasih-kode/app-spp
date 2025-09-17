@@ -3,7 +3,7 @@ Sebelum install Ekspor dulu file .sql di phpmyadmin lama
 
 Cara install dengan Docker
 
-1. Download semua file yang dibutuhkan yaitu docker-compose.yml, struktur.sql, data.sql
+1. Download semua file yang dibutuhkan yaitu docker-compose.yml
 2. Kemudian jalankan perintah di terminal di mana file docker-compose.yml berada/ docker compose up -d --build
 3. Kemudian buka browser localhost:8081 untuk phpmyadmin
 4. Kemudian pilih database testdb dan impor file .sql lama
