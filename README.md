@@ -18,4 +18,4 @@ Cara install dengan Docker
 4. Kemudian jalankan `docker network create tunnel-app` (agar network dan app dalam satu jaringan)
 5. Kemudian masukkan cloudflared tunnel ke network tunnel-app `docker network connect tunnel-app nama-cloudflared-tunnel`
 6. Masukkan juga app ke dalam jaringan sama dengan clodflared tunnel `docker network connect tunnel-app nama-app`
-7. Begitu juga dependensi lainnya misal apache, mariadb yang ada dalam file docker compose app
+7. Begitu juga dependensi lainnya misal apache, mariadb yang ada dalam file docker compose app (masukkan dalam jaringan yang sama dengan app)
