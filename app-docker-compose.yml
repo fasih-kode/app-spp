@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+
+  cloudflared-tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared-tunnel
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=isi-dengan-token
+    network_mode:
+    restart: unless-stopped
