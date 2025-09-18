@@ -13,10 +13,11 @@ Cara install dengan Docker
 # koneksi agar online
 
 1. Buat tunnel di cloudflared kemudian save
-2. Copy dulu tunnel token kemudian paste di file docker compose yml
-3. install cloudflared menggunakan `docker compose up -d`
-4. Kemudian jalankan `docker network create tunnel-app` (agar network dan app dalam satu jaringan)
-5. Kemudian masukkan cloudflared tunnel ke network tunnel-app `docker network connect tunnel-app nama-cloudflared-tunnel`
-6. Masukkan juga app ke dalam jaringan sama dengan clodflared tunnel `docker network connect tunnel-app nama-app`
-7. Begitu juga dependensi lainnya misal apache, mariadb yang ada dalam file docker compose app (masukkan dalam jaringan yang sama dengan app)
-8. Cek apakah sudah dalam jaringan yang sama semua `docker network inspect tunnel app`
+2. Downolad file cloudflare docker-compose.yml untuk app
+3. Copy dulu tunnel token kemudian paste di file docker compose yml
+4. install cloudflared menggunakan `docker compose up -d`
+5. Kemudian jalankan `docker network create tunnel-app` (agar network dan app dalam satu jaringan)
+6. Kemudian masukkan cloudflared tunnel ke network tunnel-app `docker network connect tunnel-app nama-cloudflared-tunnel`
+7. Masukkan juga app ke dalam jaringan sama dengan clodflared tunnel `docker network connect tunnel-app nama-app`
+8. Begitu juga dependensi lainnya misal apache, mariadb yang ada dalam file docker compose app (masukkan dalam jaringan yang sama dengan app)
+9. Cek apakah sudah dalam jaringan yang sama semua `docker network inspect tunnel app`
