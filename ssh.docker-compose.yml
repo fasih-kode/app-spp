@@ -1,0 +1,12 @@
+ersion: "3.8"
+
+services:
+
+  cloudflared-ssh:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared-ssh
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=isi-dengan-token
+    network_mode: "host"
+    restart: unless-stopped
