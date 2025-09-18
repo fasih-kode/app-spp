@@ -40,6 +40,36 @@
 5. Semua service (`web`, `db`, `phpmyadmin`, `cloudflared`) otomatis sudah masuk ke network `tunnel-app` → tidak perlu lagi `docker network create` atau `docker network connect` manual.
 6. Setelah tunnel aktif, domain publik yang sudah diatur di Cloudflare akan langsung mengarah ke aplikasi.
 
+## Cara Update Cloudflared
+
+Karena menggunakan Docker, update sangat mudah dilakukan:
+
+1. Masuk ke folder tempat `docker-compose.yml` berada.
+2. Pull image terbaru:
+
+   ```bash
+   docker compose pull cloudflared-tunnel
+   ```
+3. Restart container dengan image terbaru:
+
+   ```bash
+   docker compose up -d
+   ```
+4. (Opsional) Cek versi Cloudflared yang terpasang:
+
+   ```bash
+   docker exec -it cloudflared-tunnel cloudflared --version
+   ```
+
+⚠️ Catatan:
+
+* Dengan `image: cloudflare/cloudflared:latest`, setiap kali update akan otomatis ke versi terbaru.
+* Jika ingin stabil, gunakan versi tertentu, misalnya:
+
+  ```yaml
+  image: cloudflare/cloudflared:2024.9.1
+  ```
+
 # Setting ssh untuk remote host docker
 1. install dulu # Add cloudflare gpg key
 `sudo mkdir -p --mode=0755 /usr/share/keyrings
