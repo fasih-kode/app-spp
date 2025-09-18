@@ -9,6 +9,8 @@ services:
       - "8080:80"
     depends_on:
       - db
+    networks:
+      - tunnel-app
 
   db:
     image: mariadb:10.1
@@ -21,6 +23,8 @@ services:
       MYSQL_PASSWORD: userpass
     volumes:
       - db_data:/var/lib/mysql
+    networks:
+      - tunnel-app
 
   phpmyadmin:
     image: sayafasih/phpmyadmin:4.5.1
@@ -30,9 +34,25 @@ services:
       - "8081:80"
     depends_on:
       - db
+    networks:
+      - tunnel-app
+
+  cloudflared-tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared-tunnel
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=isi-dengan-token
+    restart: unless-stopped
+    networks:
+      - tunnel-app
 
 volumes:
   db_data:
+
+networks:
+  tunnel-app:
+    driver: bridge
 
 
 
