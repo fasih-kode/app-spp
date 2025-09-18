@@ -1,26 +1,44 @@
 # App-spp
-Sebelum install Ekspor dulu file .sql di phpmyadmin lama
 
-Cara install dengan Docker
+## Persiapan
 
-1. Download semua file yang dibutuhkan yaitu docker-compose.yml
-2. Kemudian jalankan perintah di terminal di mana file docker-compose.yml berada/ `docker compose up -d --build`
-3. Kemudian buka browser localhost:8081 untuk phpmyadmin
-4. Kemudian pilih database testdb dan impor file .sql lama
-5. Kemudian buka tab baru localhost:8080 untuk aplikasi
-6. Login username:admin@admin.com dan password:admin
+1. Ekspor dulu file `.sql` dari phpMyAdmin lama (backup database lama).
 
-# Koneksi agar online
+## Instalasi dengan Docker
 
-1. Buat tunnel di cloudflared kemudian save
-2. Downolad file cloudflare docker-compose.yml untuk app
-3. Copy dulu tunnel token kemudian paste di file docker compose yml
-4. install cloudflared menggunakan `docker compose up -d`
-5. Kemudian jalankan `docker network create tunnel-app` (agar network dan app dalam satu jaringan)
-6. Kemudian masukkan cloudflared tunnel ke network tunnel-app `docker network connect tunnel-app nama-cloudflared-tunnel`
-7. Masukkan juga app ke dalam jaringan sama dengan clodflared tunnel `docker network connect tunnel-app nama-app`
-8. Begitu juga dependensi lainnya misal apache, mariadb yang ada dalam file docker compose app (masukkan dalam jaringan yang sama dengan app)
-9. Cek apakah sudah dalam jaringan yang sama semua `docker network inspect tunnel app`
+1. Download file `docker-compose.yml` dari repo ini.
+2. Jalankan perintah di terminal pada folder tempat file `docker-compose.yml` berada:
+
+   ```bash
+   docker compose up -d --build
+   ```
+3. Buka browser ke `http://localhost:8081` untuk phpMyAdmin.
+4. Buat database `testdb` (jika belum ada) lalu impor file `.sql` hasil backup.
+5. Buka tab baru `http://localhost:8080` untuk aplikasi.
+6. Login dengan:
+
+   * **Username:** `admin@admin.com`
+   * **Password:** `admin`
+
+## Koneksi agar Online dengan Cloudflare Tunnel
+
+1. Buat tunnel di Cloudflare Dashboard lalu simpan.
+2. Copy **Tunnel Token** dari Cloudflare.
+3. Edit file `docker-compose.yml` dan ganti bagian:
+
+   ```yaml
+   environment:
+     - TUNNEL_TOKEN=isi-dengan-token
+   ```
+
+   dengan token milikmu.
+4. Jalankan ulang:
+
+   ```bash
+   docker compose up -d
+   ```
+5. Semua service (`web`, `db`, `phpmyadmin`, `cloudflared`) otomatis sudah masuk ke network `tunnel-app` → tidak perlu lagi `docker network create` atau `docker network connect` manual.
+6. Setelah tunnel aktif, domain publik yang sudah diatur di Cloudflare akan langsung mengarah ke aplikasi.
 
 # Setting ssh untuk remote host docker
 1. install dulu # Add cloudflare gpg key
