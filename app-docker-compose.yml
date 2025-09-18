@@ -8,3 +8,9 @@ services:
     environment:
       - TUNNEL_TOKEN=isi-dengan-token
     restart: unless-stopped
+    networks:
+      - tunnel-app   # masukkan ke network custom
+
+networks:
+  tunnel-app:       # definisi network
+    driver: bridge  # default driver (bridge)
