@@ -76,10 +76,15 @@ Karena menggunakan Docker, update sangat mudah dilakukan:
 curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null
 ```
 2. Add this repo to your apt repositories
-```echo 'deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared any main' | sudo tee /etc/apt/sources.list.d/cloudflared.list```
+```echo 'deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared any main' | sudo tee /etc/apt/sources.list.d/cloudflared.list
+```
 
 3. install cloudflared
-```sudo apt-get update && sudo apt-get install cloudflared```
+```sudo apt-get update && sudo apt-get install cloudflared
+```
 4. Buat tunnel di cloudflare dan copy tunnel token
 5. Kemudian paste di file docker-compose.yml
-6. install cloudflared menggunakan ```docker compose up -d```
+6. install cloudflared menggunakan
+   ```bash
+   docker compose up -d
+   ```
