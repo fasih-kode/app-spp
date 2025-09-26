@@ -7,38 +7,22 @@
 ## Instalasi dengan Docker
 
 1. Download file `docker-compose.yml` dari repo ini.
-2. Jalankan perintah di terminal pada folder tempat file `docker-compose.yml` berada:
+2. Buat tunnel di cloudfalre (hapus dulu semua tunnel yang pernah dipakai dan hapus juga dns namenya agar tidak bentrok)
+3. Kemudian copy token tunnel ke file `docker-compose.yml`
+4. Jalankan perintah di terminal pada folder tempat file `docker-compose.yml` berada:
 
    ```bash
    docker compose up -d --build
    ```
-3. Buka browser ke `http://localhost:8081` untuk phpMyAdmin.
-4. Buat database `testdb` (jika belum ada) lalu impor file `.sql` hasil backup.
-5. Buka tab baru `http://localhost:8080` untuk aplikasi.
-6. Login dengan:
+5. Tunngu sampai tanda connector connected
+6. Buka browser ke `http://localhost:8081` untuk phpMyAdmin.
+7. Buat database `testdb` (jika belum ada) lalu impor file `.sql` hasil backup.
+8. Buka tab baru `http://localhost:8080` untuk aplikasi.
+9. Login dengan:
 
    * **Username:** `admin@admin.com`
    * **Password:** `admin`
-
-## Koneksi agar Online dengan Cloudflare Tunnel
-
-1. Buat tunnel di Cloudflare Dashboard lalu simpan.
-2. Copy **Tunnel Token** dari Cloudflare.
-3. Edit file `docker-compose.yml` dan ganti bagian:
-
-   ```yaml
-   environment:
-     - TUNNEL_TOKEN=isi-dengan-token
-   ```
-
-   dengan token milikmu.
-4. Jalankan ulang:
-
-   ```bash
-   docker compose up -d
-   ```
-5. Semua service (`web`, `db`, `phpmyadmin`, `cloudflared`) otomatis sudah masuk ke network `tunnel-app` → tidak perlu lagi `docker network create` atau `docker network connect` manual.
-6. Setelah tunnel aktif, domain publik yang sudah diatur di Cloudflare akan langsung mengarah ke aplikasi.
+10. Kembali ke tunnel yang sudah dibuat dan buka Published application routes untuk tes online atau tidak
 
 ## Cara Update Cloudflared
 
