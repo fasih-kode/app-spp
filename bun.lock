@@ -1,0 +1,28 @@
+{
+  "lockfileVersion": 2,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "e-pembayaran-spp",
+    },
+    "apps/api": {
+      "name": "@e-pembayaran-spp/api",
+      "version": "0.1.0",
+    },
+    "apps/web": {
+      "name": "@e-pembayaran-spp/web",
+      "version": "0.1.0",
+    },
+    "packages/shared": {
+      "name": "@e-pembayaran-spp/shared",
+      "version": "0.1.0",
+    },
+  },
+  "packages": {
+    "@e-pembayaran-spp/api": ["@e-pembayaran-spp/api@workspace:apps/api"],
+
+    "@e-pembayaran-spp/shared": ["@e-pembayaran-spp/shared@workspace:packages/shared"],
+
+    "@e-pembayaran-spp/web": ["@e-pembayaran-spp/web@workspace:apps/web"],
+  }
+}
