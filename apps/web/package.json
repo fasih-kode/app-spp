@@ -11,11 +11,13 @@
   },
   "devDependencies": {
     "@fontsource-variable/inter": "^5.3.0",
+    "@internationalized/date": "^3.12.0",
     "@lucide/svelte": "^1.47.0",
     "@sveltejs/vite-plugin-svelte": "^7.3.0",
     "@tailwindcss/vite": "^4.3.3",
     "@tsconfig/svelte": "^5.0.8",
     "@types/node": "^24.13.3",
+    "bits-ui": "^2.18.0",
     "cn": "^0.3.0",
     "shadcn-svelte": "^1.7.0",
     "svelte": "^5.57.0",
