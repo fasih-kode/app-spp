@@ -1,5 +1,11 @@
 <script lang="ts">
   import { AppShell } from '$lib/components/app-shell'
+  import {
+    Card,
+    CardContent,
+    CardHeader,
+    CardTitle,
+  } from '$lib/components/ui/card'
 </script>
 
 <svelte:head>
@@ -24,40 +30,72 @@
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-      <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-        <p class="text-sm font-medium text-slate-500">Total Siswa</p>
-        <p class="mt-2 text-2xl font-bold text-slate-900">0</p>
-        <p class="mt-1 text-xs text-slate-500">Data belum tersedia</p>
-      </div>
+      <Card class="border-slate-200 bg-white shadow-sm">
+        <CardHeader class="p-5 pb-0">
+          <CardTitle class="text-sm font-medium text-slate-500">
+            Total Siswa
+          </CardTitle>
+        </CardHeader>
 
-      <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-        <p class="text-sm font-medium text-slate-500">Tagihan Aktif</p>
-        <p class="mt-2 text-2xl font-bold text-slate-900">0</p>
-        <p class="mt-1 text-xs text-slate-500">Data belum tersedia</p>
-      </div>
+        <CardContent class="p-5 pt-2">
+          <p class="text-2xl font-bold text-slate-900">0</p>
+          <p class="mt-1 text-xs text-slate-500">Data belum tersedia</p>
+        </CardContent>
+      </Card>
 
-      <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-        <p class="text-sm font-medium text-slate-500">Tunggakan</p>
-        <p class="mt-2 text-2xl font-bold text-slate-900">Rp0</p>
-        <p class="mt-1 text-xs text-slate-500">Data belum tersedia</p>
-      </div>
+      <Card class="border-slate-200 bg-white shadow-sm">
+        <CardHeader class="p-5 pb-0">
+          <CardTitle class="text-sm font-medium text-slate-500">
+            Tagihan Aktif
+          </CardTitle>
+        </CardHeader>
 
-      <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-        <p class="text-sm font-medium text-slate-500">Pendapatan</p>
-        <p class="mt-2 text-2xl font-bold text-slate-900">Rp0</p>
-        <p class="mt-1 text-xs text-slate-500">Data belum tersedia</p>
-      </div>
+        <CardContent class="p-5 pt-2">
+          <p class="text-2xl font-bold text-slate-900">0</p>
+          <p class="mt-1 text-xs text-slate-500">Data belum tersedia</p>
+        </CardContent>
+      </Card>
+
+      <Card class="border-slate-200 bg-white shadow-sm">
+        <CardHeader class="p-5 pb-0">
+          <CardTitle class="text-sm font-medium text-slate-500">
+            Tunggakan
+          </CardTitle>
+        </CardHeader>
+
+        <CardContent class="p-5 pt-2">
+          <p class="text-2xl font-bold text-slate-900">Rp0</p>
+          <p class="mt-1 text-xs text-slate-500">Data belum tersedia</p>
+        </CardContent>
+      </Card>
+
+      <Card class="border-slate-200 bg-white shadow-sm">
+        <CardHeader class="p-5 pb-0">
+          <CardTitle class="text-sm font-medium text-slate-500">
+            Pendapatan
+          </CardTitle>
+        </CardHeader>
+
+        <CardContent class="p-5 pt-2">
+          <p class="text-2xl font-bold text-slate-900">Rp0</p>
+          <p class="mt-1 text-xs text-slate-500">Data belum tersedia</p>
+        </CardContent>
+      </Card>
     </div>
 
-    <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 class="text-lg font-semibold text-slate-900">
-        App Shell aktif
-      </h2>
+    <Card class="border-slate-200 bg-white shadow-sm">
+      <CardHeader>
+        <CardTitle class="text-lg font-semibold text-slate-900">
+          App Shell aktif
+        </CardTitle>
+      </CardHeader>
 
-      <p class="mt-2 text-sm leading-6 text-slate-500">
-        Sidebar, header, responsive navigation, dan area konten utama
-        sudah tersedia sebagai fondasi UI aplikasi.
-      </p>
-    </div>
+      <CardContent>
+        <p class="text-sm leading-6 text-slate-500">
+          Sidebar, header, responsive navigation, dan area konten utama
+          sudah tersedia sebagai fondasi UI aplikasi.
+        </p>
+      </CardContent>
+    </Card>
   </section>
 </AppShell>
