@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage } from '$lib/components/ui/breadcrumb'
   import Header from './Header.svelte'
   import Sidebar from './Sidebar.svelte'
 
@@ -29,6 +30,14 @@
 
       <main class="min-w-0 flex-1 overflow-x-hidden">
         <div class="mx-auto w-full max-w-[1600px] p-4 sm:p-6 lg:p-8">
+          <Breadcrumb class="mb-5">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbPage>Dashboard</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+
           {@render children()}
         </div>
       </main>

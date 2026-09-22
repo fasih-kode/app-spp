@@ -13,11 +13,7 @@
 <AppShell>
   <section class="space-y-6">
     <div>
-      <p class="text-sm font-medium text-emerald-600">
-        Dashboard
-      </p>
-
-      <h1 class="mt-1 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+      <h1 class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
         Selamat datang di E-Pembayaran SPP
       </h1>
 
