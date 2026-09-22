@@ -1,89 +1,75 @@
-<script>
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from './assets/vite.svg'
-  import heroImg from './assets/hero.png'
-  import Counter from './lib/Counter.svelte'
+<script lang="ts">
+  const projectName = 'E-Pembayaran SPP'
 </script>
 
-<section id="center">
-  <div class="hero">
-    <img src={heroImg} class="base" width="170" height="179" alt="" />
-    <img src={svelteLogo} class="framework" alt="Svelte logo" />
-    <img src={viteLogo} class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/App.svelte</code> and save to test <code>HMR</code></p>
-  </div>
-  <Counter />
-</section>
+<svelte:head>
+  <title>{projectName}</title>
+  <meta
+    name="description"
+    content="Sistem pembayaran SPP madrasah"
+  />
+</svelte:head>
 
-<div class="ticks"></div>
+<div class="min-h-screen bg-slate-50">
+  <header class="border-b border-slate-200 bg-white">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <div>
+        <h1 class="text-xl font-bold text-slate-900">
+          {projectName}
+        </h1>
+        <p class="text-sm text-slate-500">
+          Sistem administrasi pembayaran siswa
+        </p>
+      </div>
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true">
-      <use href="/icons.svg#documentation-icon"></use>
-    </svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank" rel="noreferrer">
-          <img class="logo" src={viteLogo} alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://svelte.dev/" target="_blank" rel="noreferrer">
-          <img class="button-icon" src={svelteLogo} alt="" />
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true">
-      <use href="/icons.svg#social-icon"></use>
-    </svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li>
-        <a href="https://github.com/vitejs/vite" target="_blank" rel="noreferrer">
-          <svg class="button-icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#github-icon"></use>
-          </svg>
-          GitHub
-        </a>
-      </li>
-      <li>
-        <a href="https://chat.vite.dev/" target="_blank" rel="noreferrer">
-          <svg class="button-icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#discord-icon"></use>
-          </svg>
-          Discord
-        </a>
-      </li>
-      <li>
-        <a href="https://x.com/vite_js" target="_blank" rel="noreferrer">
-          <svg class="button-icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#x-icon"></use>
-          </svg>
-          X.com
-        </a>
-      </li>
-      <li>
-        <a href="https://bsky.app/profile/vite.dev" target="_blank" rel="noreferrer">
-          <svg class="button-icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#bluesky-icon"></use>
-          </svg>
-          Bluesky
-        </a>
-      </li>
-    </ul>
-  </div>
-</section>
+      <div class="rounded-lg bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700">
+        Foundation
+      </div>
+    </div>
+  </header>
 
-<div class="ticks"></div>
-<section id="spacer"></section>
+  <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+      <h2 class="text-2xl font-semibold text-slate-900">
+        UI Foundation
+      </h2>
+
+      <p class="mt-2 max-w-2xl text-slate-600">
+        Tailwind CSS berhasil menjadi fondasi UI aplikasi.
+        Halaman ini sementara digunakan untuk validasi setup.
+      </p>
+
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-lg border border-slate-200 p-4">
+          <p class="text-sm font-medium text-slate-500">Frontend</p>
+          <p class="mt-1 text-lg font-semibold text-slate-900">
+            Svelte + TypeScript
+          </p>
+        </div>
+
+        <div class="rounded-lg border border-slate-200 p-4">
+          <p class="text-sm font-medium text-slate-500">Styling</p>
+          <p class="mt-1 text-lg font-semibold text-slate-900">
+            Tailwind CSS v4
+          </p>
+        </div>
+
+        <div class="rounded-lg border border-slate-200 p-4">
+          <p class="text-sm font-medium text-slate-500">Build Tool</p>
+          <p class="mt-1 text-lg font-semibold text-slate-900">
+            Vite
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <button
+          type="button"
+          class="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+        >
+          Tailwind aktif
+        </button>
+      </div>
+    </div>
+  </main>
+</div>
