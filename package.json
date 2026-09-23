@@ -1,8 +1,11 @@
 {
   "name": "e-pembayaran-spp",
-  "private": true,
   "version": "0.1.0",
+  "devDependencies": {
+    "drizzle-kit": "^0.31.11"
+  },
   "packageManager": "bun@1.4.2",
+  "private": true,
   "workspaces": [
     "apps/*",
     "packages/*"

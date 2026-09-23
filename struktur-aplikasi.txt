@@ -1,0 +1,203 @@
+.
+├── apps
+│   ├── api
+│   │   ├── node_modules
+│   │   │   ├── drizzle-kit -> ../../../node_modules/.bun/drizzle-kit@0.31.11/node_modules/drizzle-kit
+│   │   │   ├── drizzle-orm -> ../../../node_modules/.bun/drizzle-orm@0.45.3+fa2ecce84dfbcbb3/node_modules/drizzle-orm
+│   │   │   ├── postgres -> ../../../node_modules/.bun/postgres@3.4.9/node_modules/postgres
+│   │   │   └── @types
+│   │   │       └── bun -> ../../../../node_modules/.bun/@types+bun@1.4.2/node_modules/@types/bun
+│   │   ├── package.json
+│   │   ├── src
+│   │   │   ├── db
+│   │   │   │   └── index.ts
+│   │   │   ├── repositories
+│   │   │   │   ├── student-class-history.repository.ts
+│   │   │   │   └── student.repository.ts
+│   │   │   ├── services
+│   │   │   │   └── student.service.ts
+│   │   │   └── types
+│   │   │       └── student.ts
+│   │   └── tsconfig.json
+│   └── web
+│       ├── components.json
+│       ├── dist
+│       │   ├── assets
+│       │   │   ├── index-CKY4ri4n.js
+│       │   │   ├── index-D-m-cd7G.css
+│       │   │   ├── inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2
+│       │   │   ├── inter-cyrillic-wght-normal-DqGufNeO.woff2
+│       │   │   ├── inter-greek-ext-wght-normal-DlzME5K_.woff2
+│       │   │   ├── inter-greek-wght-normal-CkhJZR-_.woff2
+│       │   │   ├── inter-latin-ext-wght-normal-DO1Apj_S.woff2
+│       │   │   ├── inter-latin-wght-normal-Dx4kXJAl.woff2
+│       │   │   └── inter-vietnamese-wght-normal-CBcvBZtf.woff2
+│       │   ├── favicon.svg
+│       │   ├── icons.svg
+│       │   └── index.html
+│       ├── index.html
+│       ├── node_modules
+│       │   ├── bits-ui -> ../../../node_modules/.bun/bits-ui@2.19.2+94fc948da1ede123/node_modules/bits-ui
+│       │   ├── cn -> ../../../node_modules/.bun/cn@0.3.2/node_modules/cn
+│       │   ├── @fontsource-variable
+│       │   │   └── inter -> ../../../../node_modules/.bun/@fontsource-variable+inter@5.3.0/node_modules/@fontsource-variable/inter
+│       │   ├── @internationalized
+│       │   │   └── date -> ../../../../node_modules/.bun/@internationalized+date@3.12.4/node_modules/@internationalized/date
+│       │   ├── @lucide
+│       │   │   └── svelte -> ../../../../node_modules/.bun/@lucide+svelte@1.47.0+5d720e49779a0e36/node_modules/@lucide/svelte
+│       │   ├── shadcn-svelte -> ../../../node_modules/.bun/shadcn-svelte@1.7.0+5d720e49779a0e36/node_modules/shadcn-svelte
+│       │   ├── svelte -> ../../../node_modules/.bun/svelte@5.57.1/node_modules/svelte
+│       │   ├── svelte-check -> ../../../node_modules/.bun/svelte-check@4.7.6+07753f44c906def3/node_modules/svelte-check
+│       │   ├── @sveltejs
+│       │   │   └── vite-plugin-svelte -> ../../../../node_modules/.bun/@sveltejs+vite-plugin-svelte@7.3.0+f0ad743318c01189/node_modules/@sveltejs/vite-plugin-svelte
+│       │   ├── @tailwindcss
+│       │   │   └── vite -> ../../../../node_modules/.bun/@tailwindcss+vite@4.3.3+0b6a87ea54f96c45/node_modules/@tailwindcss/vite
+│       │   ├── tailwindcss -> ../../../node_modules/.bun/tailwindcss@4.3.3/node_modules/tailwindcss
+│       │   ├── tailwind-variants -> ../../../node_modules/.bun/tailwind-variants@3.3.1+e83bd97e7d41411e/node_modules/tailwind-variants
+│       │   ├── @tsconfig
+│       │   │   └── svelte -> ../../../../node_modules/.bun/@tsconfig+svelte@5.0.8/node_modules/@tsconfig/svelte
+│       │   ├── tw-animate-css -> ../../../node_modules/.bun/tw-animate-css@1.4.0/node_modules/tw-animate-css
+│       │   ├── @types
+│       │   │   └── node -> ../../../../node_modules/.bun/@types+node@24.13.6/node_modules/@types/node
+│       │   ├── typescript -> ../../../node_modules/.bun/typescript@6.0.3/node_modules/typescript
+│       │   └── vite -> ../../../node_modules/.bun/vite@8.3.0+a4a10867467f0b0b/node_modules/vite
+│       ├── package.json
+│       ├── public
+│       │   ├── favicon.svg
+│       │   └── icons.svg
+│       ├── README.md
+│       ├── src
+│       │   ├── app.css
+│       │   ├── App.svelte
+│       │   ├── assets
+│       │   │   ├── hero.png
+│       │   │   ├── svelte.svg
+│       │   │   └── vite.svg
+│       │   ├── lib
+│       │   │   ├── components
+│       │   │   │   ├── app-shell
+│       │   │   │   │   ├── AppShell.svelte
+│       │   │   │   │   ├── Header.svelte
+│       │   │   │   │   ├── index.ts
+│       │   │   │   │   └── Sidebar.svelte
+│       │   │   │   └── ui
+│       │   │   │       ├── breadcrumb
+│       │   │   │       │   ├── breadcrumb-ellipsis.svelte
+│       │   │   │       │   ├── breadcrumb-item.svelte
+│       │   │   │       │   ├── breadcrumb-link.svelte
+│       │   │   │       │   ├── breadcrumb-list.svelte
+│       │   │   │       │   ├── breadcrumb-page.svelte
+│       │   │   │       │   ├── breadcrumb-separator.svelte
+│       │   │   │       │   ├── breadcrumb.svelte
+│       │   │   │       │   └── index.ts
+│       │   │   │       ├── button
+│       │   │   │       │   ├── button.svelte
+│       │   │   │       │   └── index.ts
+│       │   │   │       ├── card
+│       │   │   │       │   ├── card-action.svelte
+│       │   │   │       │   ├── card-content.svelte
+│       │   │   │       │   ├── card-description.svelte
+│       │   │   │       │   ├── card-footer.svelte
+│       │   │   │       │   ├── card-header.svelte
+│       │   │   │       │   ├── card.svelte
+│       │   │   │       │   ├── card-title.svelte
+│       │   │   │       │   └── index.ts
+│       │   │   │       ├── dialog
+│       │   │   │       │   ├── dialog-close.svelte
+│       │   │   │       │   ├── dialog-content.svelte
+│       │   │   │       │   ├── dialog-description.svelte
+│       │   │   │       │   ├── dialog-footer.svelte
+│       │   │   │       │   ├── dialog-header.svelte
+│       │   │   │       │   ├── dialog-overlay.svelte
+│       │   │   │       │   ├── dialog-portal.svelte
+│       │   │   │       │   ├── dialog.svelte
+│       │   │   │       │   ├── dialog-title.svelte
+│       │   │   │       │   ├── dialog-trigger.svelte
+│       │   │   │       │   └── index.ts
+│       │   │   │       ├── input
+│       │   │   │       │   ├── index.ts
+│       │   │   │       │   └── input.svelte
+│       │   │   │       ├── label
+│       │   │   │       │   ├── index.ts
+│       │   │   │       │   └── label.svelte
+│       │   │   │       ├── select
+│       │   │   │       │   ├── index.ts
+│       │   │   │       │   ├── select-content.svelte
+│       │   │   │       │   ├── select-group-heading.svelte
+│       │   │   │       │   ├── select-group.svelte
+│       │   │   │       │   ├── select-item.svelte
+│       │   │   │       │   ├── select-label.svelte
+│       │   │   │       │   ├── select-portal.svelte
+│       │   │   │       │   ├── select-scroll-down-button.svelte
+│       │   │   │       │   ├── select-scroll-up-button.svelte
+│       │   │   │       │   ├── select-separator.svelte
+│       │   │   │       │   ├── select.svelte
+│       │   │   │       │   ├── select-trigger.svelte
+│       │   │   │       │   └── select-value.svelte
+│       │   │   │       ├── separator
+│       │   │   │       │   ├── index.ts
+│       │   │   │       │   └── separator.svelte
+│       │   │   │       ├── table
+│       │   │   │       │   ├── index.ts
+│       │   │   │       │   ├── table-body.svelte
+│       │   │   │       │   ├── table-caption.svelte
+│       │   │   │       │   ├── table-cell.svelte
+│       │   │   │       │   ├── table-footer.svelte
+│       │   │   │       │   ├── table-header.svelte
+│       │   │   │       │   ├── table-head.svelte
+│       │   │   │       │   ├── table-row.svelte
+│       │   │   │       │   └── table.svelte
+│       │   │   │       └── textarea
+│       │   │   │           ├── index.ts
+│       │   │   │           └── textarea.svelte
+│       │   │   ├── Counter.svelte
+│       │   │   ├── hooks
+│       │   │   └── utils.ts
+│       │   └── main.ts
+│       ├── svelte.config.js
+│       ├── tsconfig.app.json
+│       ├── tsconfig.json
+│       ├── tsconfig.node.json
+│       └── vite.config.ts
+├── bun.lock
+├── database
+│   ├── drizzle
+│   │   ├── migrations
+│   │   │   ├── 0000_moaning_captain_britain.sql
+│   │   │   ├── 0001_outstanding_glorian.sql
+│   │   │   ├── 0002_mushy_robbie_robertson.sql
+│   │   │   ├── 0003_material_meggan.sql
+│   │   │   ├── 0004_wild_thunderbolts.sql
+│   │   │   └── meta
+│   │   │       ├── 0000_snapshot.json
+│   │   │       ├── 0001_snapshot.json
+│   │   │       ├── 0002_snapshot.json
+│   │   │       ├── 0003_snapshot.json
+│   │   │       ├── 0004_snapshot.json
+│   │   │       └── _journal.json
+│   │   └── schema
+│   │       ├── academic-years.ts
+│   │       ├── classes.ts
+│   │       ├── settings.ts
+│   │       ├── student-class-histories.ts
+│   │       └── students.ts
+│   ├── package.json
+│   └── seeds
+├── docs
+├── drizzle.config.ts
+├── node_modules
+│   ├── drizzle-kit -> .bun/drizzle-kit@0.31.11/node_modules/drizzle-kit
+│   └── drizzle-orm -> .bun/drizzle-orm@0.45.3+fa2ecce84dfbcbb3/node_modules/drizzle-orm
+├── package.json
+├── packages
+│   └── shared
+│       └── package.json
+├── README.md
+├── scripts
+├── struktur-aplikasi.txt
+├── student.service.ts
+└── tests
+    ├── e2e
+    └── integration
+
+76 directories, 125 files
