@@ -43,6 +43,13 @@
       "when": 1790151152184,
       "tag": "0005_supreme_silver_surfer",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1790208855020,
+      "tag": "0006_massive_ghost_rider",
+      "breakpoints": true
     }
   ]
 }

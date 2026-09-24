@@ -12,12 +12,23 @@
 │   │   │   ├── db
 │   │   │   │   └── index.ts
 │   │   │   ├── repositories
+│   │   │   │   ├── payment-rate.repository.ts
+│   │   │   │   ├── payment-type.repository.ts
 │   │   │   │   ├── student-class-history.repository.ts
 │   │   │   │   └── student.repository.ts
 │   │   │   ├── services
+│   │   │   │   ├── payment-rate.service.ts
+│   │   │   │   ├── payment-type.service.ts
+│   │   │   │   ├── student-class-history.service.ts
 │   │   │   │   └── student.service.ts
 │   │   │   └── types
 │   │   │       └── student.ts
+│   │   ├── tests
+│   │   │   ├── repositories
+│   │   │   │   ├── payment-rate.repository.test.ts
+│   │   │   │   └── payment-type.repository.test.ts
+│   │   │   └── services
+│   │   │       └── payment-type.service.test.ts
 │   │   └── tsconfig.json
 │   └── web
 │       ├── components.json
@@ -168,16 +179,22 @@
 │   │   │   ├── 0002_mushy_robbie_robertson.sql
 │   │   │   ├── 0003_material_meggan.sql
 │   │   │   ├── 0004_wild_thunderbolts.sql
+│   │   │   ├── 0005_supreme_silver_surfer.sql
+│   │   │   ├── 0006_massive_ghost_rider.sql
 │   │   │   └── meta
 │   │   │       ├── 0000_snapshot.json
 │   │   │       ├── 0001_snapshot.json
 │   │   │       ├── 0002_snapshot.json
 │   │   │       ├── 0003_snapshot.json
 │   │   │       ├── 0004_snapshot.json
+│   │   │       ├── 0005_snapshot.json
+│   │   │       ├── 0006_snapshot.json
 │   │   │       └── _journal.json
 │   │   └── schema
 │   │       ├── academic-years.ts
 │   │       ├── classes.ts
+│   │       ├── payment-rates.ts
+│   │       ├── payment-types.ts
 │   │       ├── settings.ts
 │   │       ├── student-class-histories.ts
 │   │       └── students.ts
@@ -195,9 +212,8 @@
 ├── README.md
 ├── scripts
 ├── struktur-aplikasi.txt
-├── student.service.ts
 └── tests
     ├── e2e
     └── integration
 
-76 directories, 125 files
+79 directories, 138 files
