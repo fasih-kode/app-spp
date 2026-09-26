@@ -12,6 +12,8 @@
 │   │   │   ├── db
 │   │   │   │   └── index.ts
 │   │   │   ├── repositories
+│   │   │   │   ├── academic-year.repository.ts
+│   │   │   │   ├── invoice.repository.ts
 │   │   │   │   ├── payment-rate.repository.ts
 │   │   │   │   ├── payment-type.repository.ts
 │   │   │   │   ├── student-class-history.repository.ts
@@ -25,9 +27,12 @@
 │   │   │       └── student.ts
 │   │   ├── tests
 │   │   │   ├── repositories
+│   │   │   │   ├── academic-year.repository.test.ts
+│   │   │   │   ├── invoice.repository.test.ts
 │   │   │   │   ├── payment-rate.repository.test.ts
 │   │   │   │   └── payment-type.repository.test.ts
 │   │   │   └── services
+│   │   │       ├── payment-rate.service.test.ts
 │   │   │       └── payment-type.service.test.ts
 │   │   └── tsconfig.json
 │   └── web
@@ -181,6 +186,7 @@
 │   │   │   ├── 0004_wild_thunderbolts.sql
 │   │   │   ├── 0005_supreme_silver_surfer.sql
 │   │   │   ├── 0006_massive_ghost_rider.sql
+│   │   │   ├── 0007_invoice_engine_preview.sql
 │   │   │   └── meta
 │   │   │       ├── 0000_snapshot.json
 │   │   │       ├── 0001_snapshot.json
@@ -189,10 +195,12 @@
 │   │   │       ├── 0004_snapshot.json
 │   │   │       ├── 0005_snapshot.json
 │   │   │       ├── 0006_snapshot.json
+│   │   │       ├── 0007_snapshot.json
 │   │   │       └── _journal.json
 │   │   └── schema
 │   │       ├── academic-years.ts
 │   │       ├── classes.ts
+│   │       ├── invoices.ts
 │   │       ├── payment-rates.ts
 │   │       ├── payment-types.ts
 │   │       ├── settings.ts
@@ -216,4 +224,4 @@
     ├── e2e
     └── integration
 
-79 directories, 138 files
+79 directories, 146 files
