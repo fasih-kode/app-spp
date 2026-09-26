@@ -4,6 +4,7 @@ import {
   desc,
   eq,
   isNull,
+  sql,
 } from 'drizzle-orm'
 import type { PgDatabase } from 'drizzle-orm/pg-core'
 import { db } from '../db/index.ts'
@@ -102,6 +103,28 @@ export class StudentClassHistoryRepository
           isNull(
             studentClassHistories.endDate,
           ),
+        ),
+      )
+      .limit(1)
+
+    return rows[0] ?? null
+  }
+
+  async findByStudentAndPeriod(
+    studentId: string,
+    period: string,
+  ): Promise<StudentClassHistory | null> {
+    const rows = await this.executor
+      .select()
+      .from(studentClassHistories)
+      .where(
+        and(
+          eq(studentClassHistories.studentId, studentId),
+          sql`${studentClassHistories.startDate} <= ${period}`,
+          sql`(
+            ${studentClassHistories.endDate} IS NULL
+            OR ${studentClassHistories.endDate} > ${period}
+          )`,
         ),
       )
       .limit(1)

@@ -1,6 +1,9 @@
 import {
   asc,
+  and,
   eq,
+  gte,
+  lte,
   sql,
 } from 'drizzle-orm'
 import type { PgDatabase } from 'drizzle-orm/pg-core'
@@ -43,6 +46,23 @@ export class AcademicYearRepository {
       .select()
       .from(academicYears)
       .where(eq(academicYears.id, id))
+      .limit(1)
+
+    return rows[0] ?? null
+  }
+
+  async findByPeriod(
+    period: string,
+  ): Promise<AcademicYear | null> {
+    const rows = await this.executor
+      .select()
+      .from(academicYears)
+      .where(
+        and(
+          lte(academicYears.startDate, period),
+          gte(academicYears.endDate, period),
+        ),
+      )
       .limit(1)
 
     return rows[0] ?? null

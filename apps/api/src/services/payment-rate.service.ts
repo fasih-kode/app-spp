@@ -7,6 +7,7 @@ import {
 } from '../repositories/payment-rate.repository.ts'
 
 import { AcademicYearRepository } from '../repositories/academic-year.repository.ts'
+import { InvoiceRepository } from '../repositories/invoice.repository.ts'
 import { PaymentTypeRepository } from '../repositories/payment-type.repository.ts'
 
 export class PaymentRateServiceError extends Error {
@@ -27,6 +28,8 @@ export class PaymentRateService {
       new AcademicYearRepository(),
     private readonly paymentTypeRepository =
       new PaymentTypeRepository(),
+    private readonly invoiceRepository =
+      new InvoiceRepository(),
   ) {}
 
   async getById(id: string) {
@@ -112,6 +115,11 @@ export class PaymentRateService {
     data: UpdatePaymentRateData,
   ) {
     const existing = await this.getById(id)
+
+    await this.ensureNotLocked(
+      existing.academicYearId,
+      existing.paymentTypeId,
+    )
 
     if (data.amount !== undefined) {
       this.validateAmount(data.amount)
@@ -261,6 +269,25 @@ export class PaymentRateService {
     }
 
     return deactivated
+  }
+
+  private async ensureNotLocked(
+    academicYearId: string,
+    paymentTypeId: string,
+  ): Promise<void> {
+    const hasInvoices =
+      await this.invoiceRepository
+        .hasInvoicesByAcademicYearAndPaymentType(
+          academicYearId,
+          paymentTypeId,
+        )
+
+    if (hasInvoices) {
+      throw new PaymentRateServiceError(
+        'PAYMENT_RATE_LOCKED',
+        'Payment rate has already been used by an invoice and cannot be changed',
+      )
+    }
   }
 
   private validateAmount(amount: string): void {
