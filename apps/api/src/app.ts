@@ -2,15 +2,24 @@ import { Elysia } from 'elysia'
 
 import { ApiError } from './errors/api-error.ts'
 import { invoiceRoutes } from './routes/invoice.routes.ts'
+import { monthlyBillingRoutes } from './routes/monthly-billing.routes.ts'
 import { InvoiceService } from './services/invoice.service.ts'
+import { MonthlyBillingService } from './services/monthly-billing.service.ts'
 
 type InvoiceServiceContract = Pick<
   InvoiceService,
   'list' | 'getById' | 'create'
 >
 
+type MonthlyBillingServiceContract = Pick<
+  MonthlyBillingService,
+  'generate'
+>
+
 export function createApp(
   invoiceService: InvoiceServiceContract = new InvoiceService(),
+  monthlyBillingService: MonthlyBillingServiceContract =
+    new MonthlyBillingService(),
 ) {
   const app = new Elysia({
     name: 'e-pembayaran-spp-api',
@@ -65,5 +74,7 @@ export function createApp(
       },
     }))
 
-  return app.use(invoiceRoutes(invoiceService))
+  return app
+    .use(invoiceRoutes(invoiceService))
+    .use(monthlyBillingRoutes(monthlyBillingService))
 }

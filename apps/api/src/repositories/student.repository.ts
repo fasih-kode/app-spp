@@ -4,9 +4,12 @@ import {
   count,
   desc,
   eq,
+  gt,
   ilike,
+  lte,
   ne,
   or,
+  isNull,
 } from 'drizzle-orm'
 import type { PgDatabase } from 'drizzle-orm/pg-core'
 import { db } from '../db/index.ts'
@@ -30,6 +33,10 @@ export interface StudentRepositoryContract {
   findByNis(nis: string): Promise<Student | null>
 
   findByNisn(nisn: string): Promise<Student | null>
+
+  findBillingEligibleByPeriod(
+    period: string,
+  ): Promise<Student[]>
 
   list(params: StudentListParams): Promise<StudentListResult>
 
@@ -113,6 +120,27 @@ export class StudentRepository
       .limit(1)
 
     return rows[0] ?? null
+  }
+
+  async findBillingEligibleByPeriod(
+    period: string,
+  ): Promise<Student[]> {
+    return this.executor
+      .select()
+      .from(students)
+      .where(
+        and(
+          lte(students.entryDate, period),
+          or(
+            isNull(students.exitDate),
+            gt(students.exitDate, period),
+          ),
+        ),
+      )
+      .orderBy(
+        asc(students.studentCode),
+        asc(students.id),
+      )
   }
 
   async list(
